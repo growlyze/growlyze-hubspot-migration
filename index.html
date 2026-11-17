@@ -956,7 +956,8 @@ body{font-family:var(--font);font-size:17px;line-height:1.7}.wrap{max-width:1280
 <style id="hero-sizing">@media(min-width:981px){.hero{padding-top:12px}.hero-grid .process-art{zoom:1;margin-left:auto;transform:none;max-width:575px;min-height:555px;display:flex;flex-direction:column;justify-content:space-between;width:100%;border-radius:20px;box-shadow:0 26px 80px #0004}.hero-grid{grid-template-columns:1fr 1fr;align-items:start}}</style>
 <style id="cert-sizing">.official-cert img{height:92px}</style>
 <style id="smooth-scroll">html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
-<link rel="stylesheet" href="polish.css">
+<link rel="stylesheet" href="polish.css?v=3">
+<style id="hide-hero-tagline">#top .tagline{display:none!important}</style>
 </head>
 <body>
 <!-- [BUILD] Paste your Google Tag Manager noscript snippet here -->
@@ -992,13 +993,13 @@ body{font-family:var(--font);font-size:17px;line-height:1.7}.wrap{max-width:1280
           <button class="btn btn-primary js-book scoping-cta">Get my free migration plan</button>
           <a class="text" href="#pricing">See pricing</a>
         </div>
-        <p class="cta-micro">30 minutes with a solution architect, not a salesperson. Your object map, timeline and fixed price within 24 hours.</p>
+        <span id="src-trigger" hidden></span><p class="cta-micro">30 minutes with a solution architect, not a salesperson. Your object map, timeline and fixed price within 24 hours.</p>
         <ul class="hero-proof">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>No lost records or broken automations</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Go-live date guaranteed</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>HubSpot&#x2019;s onboarding fee waived*</li>
         </ul>
-        <p class="hero-fine"><b id="src-trigger">Renewal coming up? We&#x2019;ll hit your date.</b> <span class="waiver-condition">*Fee waiver subject to HubSpot eligibility.</span></p>
+        
         <div class="src-switch" role="group" aria-label="Choose the platform you are moving from">
           <span>Moving from something else?</span>
           <div class="src-chips" id="src-chips"></div>
@@ -1985,4 +1986,6 @@ if('IntersectionObserver' in window){
   document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
 }
 </script>
+<script src="book-scroll.js?v=2"></script>
+<script id="move-src-switch">document.addEventListener("DOMContentLoaded",function(){var sw=document.querySelector(".src-switch"),tag=document.querySelector(".hero .tagline");if(sw&&tag){tag.insertAdjacentElement("afterend",sw);}});</script>
 </body></html>
